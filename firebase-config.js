@@ -20,10 +20,11 @@
 // 8. Готово! Сайт начнёт работать через облако.
 
 window.FIREBASE_CONFIG = {
-  apiKey: "ВСТАВЬТЕ_СЮДА",
-  authDomain: "ВСТАВЬТЕ_СЮДА.firebaseapp.com",
-  projectId: "ВСТАВЬТЕ_СЮДА",
-  storageBucket: "ВСТАВЬТЕ_СЮДА.appspot.com",
-  messagingSenderId: "ВСТАВЬТЕ_СЮДА",
-  appId: "ВСТАВЬТЕ_СЮДА"
+  apiKey: "AIzaSyA84-RM72EJkT2G14n8IcCHrM62IskDwTA",
+  authDomain: "vedmyckub.firebaseapp.com",
+  projectId: "vedmyckub",
+  storageBucket: "vedmyckub.firebasestorage.app",
+  messagingSenderId: "90184186601",
+  appId: "1:90184186601:web:4f8235ac9d61b086414e78",
+  measurementId: "G-4VJXHFYJRM"
 };
