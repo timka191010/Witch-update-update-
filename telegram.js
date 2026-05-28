@@ -14,6 +14,9 @@
   tg.expand();
   tg.ready();
 
+  // Версия Telegram WebApp SDK (на iOS/Android старые клиенты — 6.0)
+  const tgVer = parseFloat(tg.version || '6.0');
+
   // Получаем данные пользователя
   const user = tg.initDataUnsafe && tg.initDataUnsafe.user;
   if (user) {
@@ -29,8 +32,9 @@
     }
   }
 
-  // Версия SDK 6.0+ поддерживает haptic feedback и кнопки
+  // Версия SDK 6.1+ поддерживает haptic feedback и кнопки
   function haptic(type) {
+    if (tgVer < 6.1) return;
     try {
       if (tg.HapticFeedback) {
         if (type === 'success' || type === 'error' || type === 'warning') {
@@ -49,9 +53,9 @@
     if (target) haptic('light');
   });
 
-  // MainButton для отправки анкеты внутри Telegram
+  // MainButton для отправки анкеты внутри Telegram (требует 6.1+)
   const applicationForm = document.getElementById('application-form');
-  if (applicationForm && tg.MainButton) {
+  if (applicationForm && tgVer >= 6.1 && tg.MainButton) {
     let formIsActive = false;
 
     function activateMainButton() {
@@ -98,14 +102,13 @@
   // Применяем тему Telegram (можно полностью игнорировать, если дизайн фирменный)
   // Здесь оставляем свой дизайн, но синхронизируем системные цвета шапки.
   // Методы доступны только с версии 6.1+, поэтому проверяем версию.
-  const ver = parseFloat(tg.version || '6.0');
   try {
-    if (ver >= 6.1 && typeof tg.setHeaderColor === 'function') tg.setHeaderColor('#0e0814');
-    if (ver >= 6.1 && typeof tg.setBackgroundColor === 'function') tg.setBackgroundColor('#15101a');
+    if (tgVer >= 6.1 && typeof tg.setHeaderColor === 'function') tg.setHeaderColor('#0e0814');
+    if (tgVer >= 6.1 && typeof tg.setBackgroundColor === 'function') tg.setBackgroundColor('#15101a');
   } catch {}
 
   // Закрыть приложение из админ-кнопки (BackButton доступна с 6.1+)
-  if (location.pathname.endsWith('admin.html') && ver >= 6.1 && tg.BackButton) {
+  if (location.pathname.endsWith('admin.html') && tgVer >= 6.1 && tg.BackButton) {
     try {
       tg.BackButton.show();
       tg.BackButton.onClick(() => {
