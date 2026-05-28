@@ -203,14 +203,22 @@ function bootApp() {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const fd = new FormData(form);
+      const tgUser = window.__tgUser || null;
+      // Нормализуем ник: убираем @ и пробелы
+      const rawTg = (fd.get('telegram') || '').toString().trim().replace(/^@/, '');
       const application = {
         name: (fd.get('name') || '').toString().trim(),
         age: parseInt(fd.get('age'), 10) || null,
         role: (fd.get('role') || '').toString().trim(),
         phone: (fd.get('phone') || '').toString().trim(),
         email: (fd.get('email') || '').toString().trim(),
+        telegram: rawTg,
         photo: (fd.get('photo') || '').toString(),
         story: (fd.get('story') || '').toString().trim(),
+        // Если форма открыта внутри Telegram Mini App — добавим точный id и username
+        telegramId: tgUser ? tgUser.id : null,
+        telegramUsername: tgUser ? (tgUser.username || null) : (rawTg || null),
+        telegramName: tgUser ? [tgUser.first_name, tgUser.last_name].filter(Boolean).join(' ') : null,
       };
       try {
         await Store.addApplication(application);
