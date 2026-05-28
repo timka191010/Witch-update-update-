@@ -656,3 +656,244 @@
   font-size: 11px !important;
   letter-spacing: 1.5px;
 }
+
+/* ============================================
+   BIRTHDAYS
+   ============================================ */
+
+.bday-soon {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.bday-card {
+  display: flex;
+  gap: 16px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(216, 194, 160, 0.08), rgba(216, 194, 160, 0.02));
+  border: 1px solid rgba(216, 194, 160, 0.18);
+  border-radius: 10px;
+  transition: all 0.3s;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bday-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(216, 194, 160, 0.45);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.bday-card.soon {
+  border-color: rgba(216, 168, 100, 0.5);
+  background: linear-gradient(135deg, rgba(216, 168, 100, 0.18), rgba(216, 168, 100, 0.05));
+}
+
+.bday-card.today {
+  border-color: #d8a864;
+  background: linear-gradient(135deg, rgba(216, 168, 100, 0.35), rgba(216, 168, 100, 0.1));
+  animation: bdayPulse 2s ease-in-out infinite;
+}
+
+.bday-card.today::before {
+  content: "🎉";
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 60px;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+@keyframes bdayPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(216, 168, 100, 0.5); }
+  50%      { box-shadow: 0 0 0 12px rgba(216, 168, 100, 0); }
+}
+
+.bday-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid rgba(216, 194, 160, 0.4);
+  background: rgba(216, 194, 160, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  color: #d8c2a0;
+}
+
+.bday-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bday-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.bday-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: #f5ead4;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.bday-role {
+  font-size: 12px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+  text-transform: lowercase;
+  margin-bottom: 6px;
+}
+
+.bday-date {
+  font-size: 13px;
+  color: #d8c2a0;
+  margin-bottom: 4px;
+}
+
+.bday-counter {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #d8a864;
+}
+
+.bday-card.today .bday-counter {
+  color: #fff4d6;
+  font-size: 14px;
+}
+
+/* Calendar grid */
+.bday-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  color: #d8c2a0;
+  font-weight: 500;
+  margin: 40px 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(216, 194, 160, 0.15);
+}
+
+.bday-calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.bday-month {
+  background: rgba(216, 194, 160, 0.03);
+  border: 1px solid rgba(216, 194, 160, 0.12);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s;
+}
+
+.bday-month:hover {
+  border-color: rgba(216, 194, 160, 0.3);
+}
+
+.bday-month.current-month {
+  border-color: rgba(216, 168, 100, 0.5);
+  background: linear-gradient(135deg, rgba(216, 168, 100, 0.08), rgba(216, 194, 160, 0.03));
+}
+
+.bday-month-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  color: #d8c2a0;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(216, 194, 160, 0.12);
+}
+
+.bday-month.current-month .bday-month-title {
+  color: #f5ead4;
+}
+
+.bday-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(216, 194, 160, 0.06);
+}
+
+.bday-row:last-child { border-bottom: none; }
+
+.bday-row.is-today {
+  background: rgba(216, 168, 100, 0.15);
+  border-radius: 4px;
+  padding: 8px;
+  margin: 4px 0;
+}
+
+.bday-day {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #d8c2a0;
+  min-width: 28px;
+  text-align: center;
+}
+
+.bday-mini-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: rgba(216, 194, 160, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  color: #d8c2a0;
+  flex-shrink: 0;
+}
+
+.bday-mini-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bday-row-name {
+  flex: 1;
+  color: #ece6dc;
+  font-weight: 500;
+}
+
+.bday-row-age {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: 0.55;
+  background: rgba(216, 194, 160, 0.08);
+  padding: 2px 7px;
+  border-radius: 100px;
+}
+
+/* День рождения в карточке участницы */
+.card-bday {
+  margin-top: 8px;
+  padding: 6px 10px;
+  background: rgba(216, 168, 100, 0.1);
+  border-left: 2px solid #d8a864;
+  font-size: 12px;
+  color: #f1d8a3;
+  letter-spacing: 0.3px;
+  border-radius: 2px;
+}
