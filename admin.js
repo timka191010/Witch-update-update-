@@ -306,6 +306,7 @@
           ${a.role  ? `<div><strong>Роль:</strong> ${esc(a.role)}</div>` : ''}
           ${a.phone ? `<div><strong>Телефон:</strong> ${esc(a.phone)}</div>` : ''}
           ${a.email ? `<div><strong>Email:</strong> ${esc(a.email)}</div>` : ''}
+          ${a.telegram ? `<div><strong>Telegram:</strong> <a href="https://t.me/${esc(a.telegram)}" target="_blank" style="color:#d8c2a0">@${esc(a.telegram)}</a></div>` : ''}
           ${a.photo ? `<div><strong>Фото:</strong> <a href="${esc(a.photo)}" target="_blank" style="color:#d8c2a0">смотреть</a></div>` : ''}
         </div>
         ${a.story ? `<div class="app-story">${esc(a.story)}</div>` : ''}
@@ -335,7 +336,18 @@
         age: app.age || null,
         photo: app.photo || '',
       });
-      await Store.updateApplication(id, { status: 'accepted' });
+      // Помечаем заявку как принятую. Если есть telegramId — ставим notify:'pending',
+      // чтобы бэкенд-бот увидел и отправил пользователю ссылку на вступление.
+      const patch = { status: 'accepted', approvedAt: new Date().toISOString() };
+      if (app.telegramId) {
+        patch.notify = 'pending';
+        patch.telegramId = app.telegramId;
+        patch.telegramUsername = app.telegramUsername || null;
+      }
+      await Store.updateApplication(id, patch);
+      if (!app.telegramId) {
+        alert('Заявка принята. Но у анкеты нет Telegram ID — бот не сможет отправить приглашение автоматически. Свяжитесь с человеком вручную.');
+      }
     } else if (action === 'reject') {
       await Store.updateApplication(id, { status: 'rejected' });
     } else if (action === 'delete-app') {
