@@ -1,0 +1,23 @@
+# Render Blueprint — автоматическая конфигурация деплоя
+# Документация: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: vedmy-club
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=3600
+    routes:
+      - type: rewrite
+        source: /admin
+        destination: /admin.html

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ведьмы не стареют —    закрытый клуб силы и красоты</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="stars"></div>
+
+<header class="hero">
+  <nav class="nav">
+    <ul>
+      <li><a href="#about">О клубе</a></li>
+      <li><a href="#trips">Выезды</a></li>
+      <li><a href="#history">История</a></li>
+      <li><a href="#lifehacks">Лайфхаки</a></li>
+      <li><a href="#members">Участницы</a></li>
+      <li><a href="#contact">Анкета</a></li>
+      <li><a href="admin.html" class="admin-link">Админ</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero-content">
+    <p class="hero-sub animate fade-up delay-1">закрытый женский клуб</p>
+    <h1 class="hero-title">Ведьмы<br>не стареют</h1>
+    <div class="hero-divider"></div>
+    <p class="hero-text animate fade-up delay-3">Сила. Красота. Интеллект. Развитие.</p>
+    <a href="#contact" class="btn animate fade-up delay-4">Подать анкету</a>
+  </div>
+  <div class="moon"></div>
+  <div class="scroll-hint animate fade-up delay-5">
+    <span></span>
+  </div>
+</header>
+
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="reveal">Чем мы занимаемся</h2>
+    <p class="lead reveal">
+      Ведьмы не стареют — это не про эзотерику, а про современный женский клуб.
+      Путешествия, бранчи, полезные подборки, надёжная подруга в кармане и место, куда хочется возвращаться.
+    </p>
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1400&q=80" alt="Лунная ночь">
+    </div>
+    <div class="grid-3 features-grid">
+      <a href="#trips" class="card feature-card reveal">
+        <div class="feature-tag">выезды</div>
+        <h3>Тусовки и путешествия</h3>
+        <p>От Карелии до Бали — ездим компанией, отдыхаем, делимся силой. 6+ выездов в год.</p>
+        <span class="card-link">Смотреть афишу →</span>
+      </a>
+      <a href="#contact" class="card feature-card reveal" style="transition-delay:.1s">
+        <div class="feature-tag">сообщество</div>
+        <h3>Фрэндзона</h3>
+        <p>Закрытый чат, где находят подруг, делятся буднями, советуются и спасают друг друга.</p>
+        <span class="card-link">Подать анкету →</span>
+      </a>
+      <a href="#lifehacks" class="card feature-card reveal" style="transition-delay:.2s">
+        <div class="feature-tag">лайфхаки</div>
+        <h3>Полезное и практичное</h3>
+        <p>Подборки врачей, бьюти-привычки, баланс, отношения — то, что реально работает.</p>
+        <span class="card-link">Читать →</span>
+      </a>
+      <a href="#history" class="card feature-card reveal" style="transition-delay:.3s">
+        <div class="feature-tag">архив</div>
+        <h3>Где мы уже были</h3>
+        <p>Грузия, Марокко, Камчатка, Крым — листайте таймлайн прошлых выездов.</p>
+        <span class="card-link">История →</span>
+      </a>
+      <a href="#members" class="card feature-card reveal" style="transition-delay:.4s">
+        <div class="feature-tag">девочки</div>
+        <h3>Кто внутри</h3>
+        <p>Психологи, художницы, астрологи, путешественницы — наши участницы.</p>
+        <span class="card-link">Познакомиться →</span>
+      </a>
+      <a href="#contact" class="card feature-card reveal" style="transition-delay:.5s">
+        <div class="feature-tag">вступление</div>
+        <h3>Хочу к вам</h3>
+        <p>Заполните анкету — мы рассмотрим её и пригласим на ближайшую встречу.</p>
+        <span class="card-link">Подать заявку →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES — временно скрыто
+<section id="prices" class="section dark">
+  <div class="container">
+    <h2 class="reveal">Цены</h2>
+    <p class="lead reveal">Выберите свой путь в клубе.</p>
+    <div class="grid-3">
+      <div class="price reveal">
+        <h3>Гостья</h3>
+        <div class="amount">5 000 ₽</div>
+        <p class="period">разовое участие</p>
+        <ul>
+          <li>1 встреча клуба</li>
+          <li>Чай и сладости</li>
+          <li>Знакомство с сёстрами</li>
+        </ul>
+      </div>
+      <div class="price featured reveal" style="transition-delay:.1s">
+        <div class="badge">популярно</div>
+        <h3>Ведьма</h3>
+        <div class="amount">18 000 ₽</div>
+        <p class="period">в месяц</p>
+        <ul>
+          <li>Все встречи месяца</li>
+          <li>Лунные ритуалы</li>
+          <li>Закрытый чат клуба</li>
+          <li>Личная консультация</li>
+        </ul>
+      </div>
+      <div class="price reveal" style="transition-delay:.2s">
+        <h3>Жрица</h3>
+        <div class="amount">150 000 ₽</div>
+        <p class="period">в год</p>
+        <ul>
+          <li>Все программы клуба</li>
+          <li>2 выезда в год включены</li>
+          <li>Личная наставница</li>
+          <li>Подарки и сюрпризы</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- SHOP / WB-подборки — временно скрыто
+<section id="shop" class="section">
+  <div class="container">
+    <h2 class="reveal">Подборки с Wildberries</h2>
+    <p class="lead reveal">Что мы носим, чем мажемся и без чего не выходим на выезды. Прямые ссылки на товары.</p>
+    <div class="shop-grid">
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=уходовая+косметика" target="_blank" rel="noopener" class="shop-card reveal">
+        <div class="shop-emoji">✨</div>
+        <h3>Уход за лицом</h3>
+        <p>Сыворотки, кремы и патчи, проверенные клубом.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=шёлковая+пижама" target="_blank" rel="noopener" class="shop-card reveal" style="transition-delay:.1s">
+        <div class="shop-emoji">🌙</div>
+        <h3>Шёлк и пижамы</h3>
+        <p>Для дома, отелей и красивых сториз с выездов.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=аромасвечи" target="_blank" rel="noopener" class="shop-card reveal" style="transition-delay:.2s">
+        <div class="shop-emoji">🕯</div>
+        <h3>Свечи и аромат</h3>
+        <p>Ритуал «домой пришла» — без свечи никак.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=чемодан" target="_blank" rel="noopener" class="shop-card reveal" style="transition-delay:.3s">
+        <div class="shop-emoji">🧳</div>
+        <h3>Дорожный набор</h3>
+        <p>Чемоданы, органайзеры, всё для выездов.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=книги+по+психологии" target="_blank" rel="noopener" class="shop-card reveal" style="transition-delay:.4s">
+        <div class="shop-emoji">📖</div>
+        <h3>Книжная полка</h3>
+        <p>Психология, истории и то, что обсуждаем в чате.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+      <a href="https://www.wildberries.ru/catalog/0/search.aspx?search=термокружка" target="_blank" rel="noopener" class="shop-card reveal" style="transition-delay:.5s">
+        <div class="shop-emoji">☕</div>
+        <h3>Утренние привычки</h3>
+        <p>Термокружки, матча, наборы для медленных утр.</p>
+        <span class="shop-link">Открыть на WB →</span>
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
+<section id="lifehacks" class="section dark">
+  <div class="container">
+    <h2 class="reveal">Лайфхаки клуба</h2>
+    <p class="lead reveal">Короткие подсказки от участниц — то, что реально меняет день.</p>
+    <div class="hacks-grid">
+      <div class="hack-card reveal">
+        <div class="hack-num">01</div>
+        <h4>Утро без телефона</h4>
+        <p>Первые 30 минут — без экранов. Кофе, окно, тишина. Меняет всё.</p>
+      </div>
+      <div class="hack-card reveal" style="transition-delay:.08s">
+        <div class="hack-num">02</div>
+        <h4>Сумка-выручалочка</h4>
+        <p>Капли для глаз, мини-духи, гигиеничка, наушники, влажные салфетки. Всегда.</p>
+      </div>
+      <div class="hack-card reveal" style="transition-delay:.16s">
+        <div class="hack-num">03</div>
+        <h4>Список на 5 минут</h4>
+        <p>В конце дня — пять строк: что было хорошего. Бесплатная терапия.</p>
+      </div>
+      <div class="hack-card reveal" style="transition-delay:.24s">
+        <div class="hack-num">04</div>
+        <h4>«Подруга в кармане»</h4>
+        <p>В нашем чате задают любой вопрос — и через минуту приходит ответ от своих.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trips" class="section">
+  <div class="container">
+    <h2 class="reveal">Выезды</h2>
+    <p class="lead reveal">Места силы, где время замирает.</p>
+    <div class="trips" id="trips-list"></div>
+  </div>
+</section>
+
+<section id="history" class="section dark">
+  <div class="container">
+    <h2 class="reveal">История выездов</h2>
+    <p class="lead reveal">Куда мы уже летали, бродили и колдовали.</p>
+    <div class="timeline" id="history-list"></div>
+    <p class="empty-history reveal" id="history-empty" style="display:none;">
+      Архив пока пуст. Скоро появятся первые истории 🌙
+    </p>
+  </div>
+</section>
+
+<section id="members" class="section">
+  <div class="container">
+    <h2 class="reveal">Участницы</h2>
+    <p class="lead reveal">Те, кто уже внутри.</p>
+    <div class="grid-5" id="members-list"></div>
+  </div>
+</section>
+
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="reveal">Анкета участницы</h2>
+    <p class="lead reveal">Заполните анкету — мы рассмотрим её и пригласим на ближайшую встречу.</p>
+    <form class="form reveal" id="application-form">
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="number" name="age" placeholder="Возраст" min="18" max="99" required>
+      <input type="text" name="role" placeholder="Чем занимаетесь (например: художница, психолог)" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
+      <input type="email" name="email" placeholder="Email">
+
+      <div class="public-photo-field">
+        <label class="public-photo-label">Фото (необязательно)</label>
+        <div class="public-photo-uploader" id="public-photo">
+          <div class="public-photo-preview" id="public-photo-preview">
+            <div class="public-photo-placeholder">Перетащите файл сюда или нажмите, чтобы выбрать</div>
+          </div>
+          <input type="file" accept="image/*" id="public-photo-input" style="display:none;">
+          <input type="hidden" name="photo" id="public-photo-value">
+          <button type="button" class="public-photo-clear" id="public-photo-clear" style="display:none;">убрать фото</button>
+        </div>
+      </div>
+
+      <textarea name="story" placeholder="Что привело вас к нам?" rows="4"></textarea>
+      <button type="submit" class="btn">Отправить анкету</button>
+      <p class="thanks" id="thanks">Спасибо. Ваша анкета принята. Мы свяжемся в течение луны 🌙</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Клуб «Ведьмы не стареют»</p>
+    <p class="small">Москва </p>
+  </div>
+</footer>
+
+<script src="firebase-config.js"></script>
+<script type="module" src="firebase-init.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script src="telegram.js"></script>
+
+</body>
+</html>
