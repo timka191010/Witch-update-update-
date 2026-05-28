@@ -53,42 +53,13 @@
     if (target) haptic('light');
   });
 
-  // MainButton для отправки анкеты внутри Telegram (требует 6.1+)
+  // Сообщение «Спасибо» после отправки анкеты + вибрация
   const applicationForm = document.getElementById('application-form');
-  if (applicationForm && tgVer >= 6.1 && tg.MainButton) {
-    let formIsActive = false;
-
-    function activateMainButton() {
-      if (formIsActive) return;
-      formIsActive = true;
-      tg.MainButton.setText('Отправить анкету');
-      tg.MainButton.show();
-      tg.MainButton.onClick(() => {
-        if (applicationForm.checkValidity()) {
-          applicationForm.requestSubmit();
-        } else {
-          applicationForm.reportValidity();
-          haptic('error');
-        }
-      });
-    }
-
-    function deactivateMainButton() {
-      formIsActive = false;
-      tg.MainButton.hide();
-    }
-
-    // Активируем кнопку Telegram когда форма видна
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => e.isIntersecting ? activateMainButton() : deactivateMainButton());
-    }, { threshold: 0.4 });
-    io.observe(applicationForm);
-
-    // После успешной отправки — закрываем приложение или показываем уведомление
+  if (applicationForm) {
     applicationForm.addEventListener('submit', () => {
       setTimeout(() => {
         haptic('success');
-        if (tg.showPopup) {
+        if (tg.showPopup && tgVer >= 6.2) {
           tg.showPopup({
             title: 'Спасибо!',
             message: 'Ваша анкета принята. Мы свяжемся с вами в течение луны 🌙',
