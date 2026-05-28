@@ -96,17 +96,21 @@
   }
 
   // Применяем тему Telegram (можно полностью игнорировать, если дизайн фирменный)
-  // Здесь оставляем свой дизайн, но синхронизируем системные цвета шапки
+  // Здесь оставляем свой дизайн, но синхронизируем системные цвета шапки.
+  // Методы доступны только с версии 6.1+, поэтому проверяем версию.
+  const ver = parseFloat(tg.version || '6.0');
   try {
-    tg.setHeaderColor('#0e0814');
-    tg.setBackgroundColor('#15101a');
+    if (ver >= 6.1 && typeof tg.setHeaderColor === 'function') tg.setHeaderColor('#0e0814');
+    if (ver >= 6.1 && typeof tg.setBackgroundColor === 'function') tg.setBackgroundColor('#15101a');
   } catch {}
 
-  // Закрыть приложение из админ-кнопки (BackButton)
-  if (location.pathname.endsWith('admin.html') && tg.BackButton) {
-    tg.BackButton.show();
-    tg.BackButton.onClick(() => {
-      location.href = 'index.html';
-    });
+  // Закрыть приложение из админ-кнопки (BackButton доступна с 6.1+)
+  if (location.pathname.endsWith('admin.html') && ver >= 6.1 && tg.BackButton) {
+    try {
+      tg.BackButton.show();
+      tg.BackButton.onClick(() => {
+        location.href = 'index.html';
+      });
+    } catch {}
   }
 })();
