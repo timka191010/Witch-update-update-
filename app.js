@@ -211,7 +211,6 @@ function bootApp() {
         age: parseInt(fd.get('age'), 10) || null,
         role: (fd.get('role') || '').toString().trim(),
         phone: (fd.get('phone') || '').toString().trim(),
-        email: (fd.get('email') || '').toString().trim(),
         telegram: rawTg,
         photo: (fd.get('photo') || '').toString(),
         story: (fd.get('story') || '').toString().trim(),
