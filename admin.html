@@ -47,6 +47,7 @@
   <div class="tabs">
     <button class="tab active" data-tab="apps">Заявки <span class="count" id="apps-count">0</span></button>
     <button class="tab" data-tab="members">Участницы <span class="count" id="members-count">0</span></button>
+    <button class="tab" data-tab="birthdays">🎂 Дни рождения <span class="count" id="birthdays-count">0</span></button>
     <button class="tab" data-tab="trips">Выезды <span class="count" id="trips-count">0</span></button>
     <button class="tab" data-tab="history">История выездов <span class="count" id="history-count">0</span></button>
   </div>
@@ -69,6 +70,23 @@
     </div>
     <div class="admin-grid" id="members-admin-list"></div>
     <p class="empty" id="members-empty" style="display:none;">Пока нет участниц.</p>
+  </section>
+
+  <!-- BIRTHDAYS -->
+  <section class="tab-panel" id="tab-birthdays">
+    <div class="panel-head">
+      <h2>🎂 Ближайшие дни рождения</h2>
+      <p class="hint">Здесь видно, у кого скоро день рождения. Указать дату — в редактировании участницы.</p>
+    </div>
+
+    <div class="bday-soon" id="bday-soon"></div>
+
+    <h3 class="bday-section-title">Календарь на год</h3>
+    <div class="bday-calendar" id="bday-calendar"></div>
+
+    <p class="empty" id="bday-empty" style="display:none;">
+      Пока ни у одной участницы не указана дата рождения. Добавьте её во вкладке «Участницы».
+    </p>
   </section>
 
   <!-- TRIPS -->
